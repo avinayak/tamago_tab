@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d773476f44203fc213df071d0752ca11",
+    "revision": "5785dfd2104f29f36e82d65fbd3a4cd5",
     "url": "/tamago_tab/index.html"
   },
   {
-    "revision": "8728b08be9b1d537aed4",
-    "url": "/tamago_tab/static/css/main.04770fce.chunk.css"
+    "revision": "ef992da7e6233d621b8f",
+    "url": "/tamago_tab/static/css/main.403a29b9.chunk.css"
   },
   {
     "revision": "1cee507bf500fb84f7fa",
     "url": "/tamago_tab/static/js/2.3336c636.chunk.js"
   },
   {
-    "revision": "8728b08be9b1d537aed4",
-    "url": "/tamago_tab/static/js/main.9b524ab7.chunk.js"
+    "revision": "ef992da7e6233d621b8f",
+    "url": "/tamago_tab/static/js/main.2cec1b88.chunk.js"
   },
   {
     "revision": "25916276aa1ced055510",
