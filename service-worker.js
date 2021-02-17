@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tamago_tab/precache-manifest.9b3e788ff6f1e6cf645156999f7995df.js"
+  "/tamago_tab/precache-manifest.751e98f4f038a857da24ee7cefc64b43.js"
 );
 
 self.addEventListener('message', (event) => {

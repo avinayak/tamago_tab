@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/tamago_tab/static/css/main.403a29b9.chunk.css",
-    "main.js": "/tamago_tab/static/js/main.2cec1b88.chunk.js",
-    "main.js.map": "/tamago_tab/static/js/main.2cec1b88.chunk.js.map",
+    "main.css": "/tamago_tab/static/css/main.2e247d51.chunk.css",
+    "main.js": "/tamago_tab/static/js/main.b1a45a57.chunk.js",
+    "main.js.map": "/tamago_tab/static/js/main.b1a45a57.chunk.js.map",
     "runtime~main.js": "/tamago_tab/static/js/runtime~main.9884882e.js",
     "runtime~main.js.map": "/tamago_tab/static/js/runtime~main.9884882e.js.map",
-    "static/js/2.3336c636.chunk.js": "/tamago_tab/static/js/2.3336c636.chunk.js",
-    "static/js/2.3336c636.chunk.js.map": "/tamago_tab/static/js/2.3336c636.chunk.js.map",
+    "static/js/2.a409c1bf.chunk.js": "/tamago_tab/static/js/2.a409c1bf.chunk.js",
+    "static/js/2.a409c1bf.chunk.js.map": "/tamago_tab/static/js/2.a409c1bf.chunk.js.map",
     "index.html": "/tamago_tab/index.html",
-    "precache-manifest.9b3e788ff6f1e6cf645156999f7995df.js": "/tamago_tab/precache-manifest.9b3e788ff6f1e6cf645156999f7995df.js",
+    "precache-manifest.751e98f4f038a857da24ee7cefc64b43.js": "/tamago_tab/precache-manifest.751e98f4f038a857da24ee7cefc64b43.js",
     "service-worker.js": "/tamago_tab/service-worker.js",
-    "static/css/main.403a29b9.chunk.css.map": "/tamago_tab/static/css/main.403a29b9.chunk.css.map",
-    "static/media/logo.svg": "/tamago_tab/static/media/logo.5d5d9eef.svg"
+    "static/css/main.2e247d51.chunk.css.map": "/tamago_tab/static/css/main.2e247d51.chunk.css.map",
+    "static/media/logo.svg": "/tamago_tab/static/media/logo.ee7cd8ed.svg"
   }
 }
