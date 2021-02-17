@@ -3,11 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import Icon from "@mdi/react";
 import {
-  mdiEye,
-  mdiEyeOff,
+  mdiEyeOutline,
+  mdiEyeOffOutline,
   mdiEyedropperVariant,
   mdiShuffle,
-  mdiBookMultiple
+  mdiBookOutline,
+  mdiMicrophoneOutline,
+  mdiCardBulletedOffOutline,
+  mdiCardTextOutline
 } from "@mdi/js";
 import dict from "./rtk";
 import ReactTooltip from "react-tooltip";
@@ -16,10 +19,11 @@ import { TwitterPicker } from "react-color";
 import ls from 'local-storage'
 
 class App extends React.Component {
-  wordsets = ["N4", "N4Words", "heisig",];
+  wordsets = ["N4", "N4Words", "heisig","katakana"];
   constructor(props) {
     super(props);
     let preferences = {
+      cardMode:true,
       expanded: true,
       index: 0,
       dispIndex: 1,
@@ -37,22 +41,35 @@ class App extends React.Component {
       isPopoverOpen: false, 
       words: dict.filter(x => x.tags.indexOf(this.wordsets[preferences.wordsetIndex]) != -1)
     };
-    console.log("recons");
   }
 
   toggleexpanded = () => {
     this.setPreferenceAndState({ expanded: !this.state.expanded });
   };
 
+  toggleCard = () => {
+    this.setPreferenceAndState({ cardMode: !this.state.cardMode });
+  }
+
+  speak = () => {
+    if('speechSynthesis' in window){
+      var card = this.state.words[this.state.index];
+      let kanji = card.kanji ? card.kanji : card.kunyomi;
+      console.log(kanji)
+      var speech = new SpeechSynthesisUtterance(kanji);
+      speech.lang = 'ja-JP';
+      window.speechSynthesis.speak(speech);
+    }
+  }
+
   switchWordSet = () => {
     let wordsetIndex = (this.state.wordsetIndex + 1) % this.wordsets.length;
+    this.setState({words: dict.filter(x => x.tags.indexOf(this.wordsets[wordsetIndex]) != -1)})
     this.setPreferenceAndState({
       wordsetIndex,
       index: 0,
       dispIndex: 1,
-      words: dict.filter(x => x.tags.indexOf(this.wordsets[wordsetIndex]) != -1)
     });
-    console.log("recosns");
   };
 
   nextKanji = () => {
@@ -115,6 +132,9 @@ class App extends React.Component {
     if (event.keyCode == 83) {
       this.shuffle();
     }
+    if (event.keyCode == 90) {
+      this.speak();
+    }
   };
 
   componentDidMount() {
@@ -149,7 +169,9 @@ class App extends React.Component {
           style={{ background: this.state.background }}
           onKeyDown={this.handleKeyPress}
         />
-        <div className="content card" onKeyDown={this.handleKeyPress}>
+        <div className={`content ${this.state.cardMode && "card"}`} 
+              style={{color:this.state.cardMode?"#111":this.state.foreground}}
+              onKeyDown={this.handleKeyPress}>
           <div className={`kanji${Math.floor(kanji.length / 6)}`}>{kanji}</div>
           {this.state.expanded && (
             <div>
@@ -200,7 +222,7 @@ class App extends React.Component {
             className="tool-button"
             onClick={this.switchWordSet}
             data-tip={"switch wordset"}
-            path={mdiBookMultiple}
+            path={mdiBookOutline}
             size={1}
           />
           <Icon
@@ -216,7 +238,23 @@ class App extends React.Component {
             className="tool-button"
             onClick={this.toggleexpanded}
             data-tip="Expand card (E)"
-            path={this.state.expanded ? mdiEye : mdiEyeOff}
+            path={this.state.expanded ? mdiEyeOutline : mdiEyeOffOutline}
+            size={1}
+          />
+          <Icon
+            color={this.state.foreground}
+            className="tool-button"
+            onClick={this.toggleCard}
+            data-tip="Toggle Card UI"
+            path={this.state.cardMode ? mdiCardTextOutline : mdiCardBulletedOffOutline}
+            size={1}
+          />
+          <Icon
+            color={this.state.foreground}
+            className="tool-button"
+            onClick={this.speak}
+            data-tip="Speak (Z)"
+            path={mdiMicrophoneOutline}
             size={1}
           />
           <Popover

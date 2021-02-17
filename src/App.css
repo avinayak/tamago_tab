@@ -95,7 +95,7 @@
 }
 
 .hovercharm {
-  opacity: 0.3;
+  opacity: 0.0;
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
