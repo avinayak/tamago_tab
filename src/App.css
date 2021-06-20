@@ -4,6 +4,7 @@
 }
 .content {
   position: absolute;
+  width: 100%;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -18,11 +19,11 @@
 }
 
 .kanji0 {
-  font-size: 9rem;
+  font-size: 3rem;
 }
 
 .kanji1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 
@@ -94,15 +95,7 @@
   cursor: pointer;
 }
 
-.hovercharm {
-  opacity: 0.0;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
-}
 
-.hovercharm:hover {
-  opacity: 1;
-  filter: alpha(opacity=100); /* For IE8 and earlier */
-}
 
 .indexinput {
   background: transparent;

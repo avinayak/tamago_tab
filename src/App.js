@@ -13,7 +13,6 @@ import {
   mdiCardTextOutline
 } from "@mdi/js";
 import dict from "./rtk";
-import ReactTooltip from "react-tooltip";
 import Popover from "react-tiny-popover";
 import { TwitterPicker } from "react-color";
 import ls from 'local-storage'
@@ -163,13 +162,13 @@ class App extends React.Component {
     let kanji = card.kanji ? card.kanji : card.kunyomi;
     return (
       <div className="App">
-        <ReactTooltip />
         <div
           className="background"
           style={{ background: this.state.background }}
           onKeyDown={this.handleKeyPress}
         />
-        <div className={`content ${this.state.cardMode && "card"}`} 
+        
+        <div className={`content`} 
               style={{color:this.state.cardMode?"#111":this.state.foreground}}
               onKeyDown={this.handleKeyPress}>
           <div className={`kanji${Math.floor(kanji.length / 6)}`}>{kanji}</div>
@@ -241,14 +240,7 @@ class App extends React.Component {
             path={this.state.expanded ? mdiEyeOutline : mdiEyeOffOutline}
             size={1}
           />
-          <Icon
-            color={this.state.foreground}
-            className="tool-button"
-            onClick={this.toggleCard}
-            data-tip="Toggle Card UI"
-            path={this.state.cardMode ? mdiCardTextOutline : mdiCardBulletedOffOutline}
-            size={1}
-          />
+         
           <Icon
             color={this.state.foreground}
             className="tool-button"
